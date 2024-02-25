@@ -4,7 +4,7 @@ import json
 
 def post_values(): 
 
-    URL = "http://localhost:5000/vitals/datastore"
+    URL = "http://localhost:5000/api/healthdata/post"
 
     print("Input patient ID, systolic bp, diastolic bp, weight, and height.")
     print("Patient ID:")
@@ -49,7 +49,7 @@ def post_values():
 
 def get_values(): 
 
-    URL = "http://localhost:5000/vitals/datastore"
+    URL = "http://localhost:5000/api/healthdata"
 
     g = requests.get(url = URL)
     data = g.json()
@@ -58,7 +58,7 @@ def get_values():
     return 
 
 def get_value(ID):
-    URL = f"http://localhost:5000/vitals/datastore/{ID}"
+    URL = f"http://localhost:5000/api/healthdata/{ID}"
 
     g_i = requests.get(url = URL)
     data = g_i.json()

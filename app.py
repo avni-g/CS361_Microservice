@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy 
 from flask_marshmallow import Marshmallow 
 import os 
+import json
 
 # To run locally, import Flask. 
 
@@ -11,13 +12,9 @@ import os
 ##  curl -X GET http://localhost:5000/vitals/datastore -H "
 ##  curl -X GET http://localhost:5000/vitals/datastore/1 -H "
 
-app = Flask(__name__) 
+### DB Creation 
 
-"""
-@app.route('/', methods=['GET'])
-def get():
-    return jsonify({'msg': 'Hello World'})
-"""
+app = Flask(__name__) 
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -63,16 +60,19 @@ with app.app_context():
     db.create_all()
 
 
-@app.route('/vitals/post')
+
+### Routing 
+
+@app.route('/api/healthdata/post')
 def postdata():
     return render_template('postdata.html')
 
-@app.route('/vitals')
+@app.route('/')
 def index():
     return render_template('index.html')
 
 # Create a Vitals record
-@app.route('/vitals/datastore', methods=['POST'])
+@app.route('/api/healthdata/post', methods=['POST'])
 def add_vitals():
     patient_id = request.form['patient_id']
     sys_bp = request.form['sys_bp']
@@ -85,7 +85,8 @@ def add_vitals():
     db.session.add(new_vitals)
     db.session.commit()
 
-    return healthmetric_schema.jsonify(new_vitals)
+    result = healthmetric_schema.jsonify(new_vitals)
+    return result
 
 """
 with app.app_context():
@@ -97,7 +98,7 @@ with app.app_context():
 
 
 # Get all vitals
-@app.route('/vitals/datastore', methods=['GET'])
+@app.route('/api/healthdata', methods=['GET'])
 def get_vitals():
     all_vitals = HealthMetrics.query.all()
     result = healthmetrics_schema.dump(all_vitals)
@@ -109,7 +110,7 @@ def get_vitals():
 
 
 # Get single Vitals record 
-@app.route('/vitals/datastore/<id>', methods=['GET'])
+@app.route('/api/healthdata/<id>', methods=['GET'])
 def get_vitals_record(id):
     vitals_record = HealthMetrics.query.get(id)
     return healthmetric_schema.jsonify(vitals_record)

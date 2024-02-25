@@ -49,22 +49,24 @@ If you are planning to set up the server locally, complete the following steps:
 
 1) Go to http://localhost:5000 to view the following options:
 
-<img width="289" alt="image" src="https://github.com/avni-g/CS361_Microservice/assets/61604206/56401738-2a13-4a58-a9e3-86891bb22ef6">
+![image](https://github.com/avni-g/CS361_Microservice/assets/61604206/d6054bc4-675c-4f55-8621-313f02d0a46f)
 
-To POST data:
+An example of how to POST data:
 
- <img width="388" alt="image" src="https://github.com/avni-g/CS361_Microservice/assets/61604206/f7861e18-95f7-4e5a-b9f0-e208b65cfa20">
+![image](https://github.com/avni-g/CS361_Microservice/assets/61604206/bc5f5ac1-d4f3-4c26-aff1-2c0db7094091)
 
-TO GET data: 
+An example of how to GET data by Patient ID:
 
- <img width="394" alt="image" src="https://github.com/avni-g/CS361_Microservice/assets/61604206/8404b449-c839-43d7-ba05-57d7c4d36c63">
+![image](https://github.com/avni-g/CS361_Microservice/assets/61604206/3fb6bfc7-6197-44d9-a219-71fc90364d8c)
 
-To GET data by ID, update the URL: 
+An example of how to GET all data:
 
-![image](https://github.com/avni-g/CS361_Microservice/assets/61604206/f6730218-4665-4c8b-9d0a-1c488d1d6049)
+![image](https://github.com/avni-g/CS361_Microservice/assets/61604206/2aa18a45-e5b1-437a-b8ac-ca3bd017ebb8)
 
-## Optional future development based on partner feedback 
 
-At this time, the following optional elements of the microservice are not implemented: 
-- HTML submission form to GET by ID.
-- GET by Patient ID. (Get by ID currently searches for the Record ID). 
+
+### UML Sequence Diagram
+
+![Microservice UML Sequence](https://github.com/avni-g/CS361_Microservice/assets/61604206/3f67624a-40ab-460f-85ff-85ecf2b0a663)
+
+

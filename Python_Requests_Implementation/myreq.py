@@ -63,8 +63,10 @@ def get_value(ID):
 
     g_i = requests.get(url = URL)
     data = g_i.json()
-    for item, value in data.items():
-        print(item, ":", value, "\r\n")
+    #for item, value in data.items():
+    #   print(item, ":", value, "\r\n")
+    for item in data:
+        print(item, "\r\n")
     time.sleep(2)
     return 
 
@@ -105,7 +107,7 @@ while True:
     print("What would you like to do? Choose from the following:"
           "Select 1 to POST a value.\r\n"
           "Select 2 to GET all values.\r\n"
-          "Select 3 to GET one value.\r\n"
+          "Select 3 to GET all values for a patient.\r\n"
           "Type * to exit.\r\n"
             )
     action = input()
@@ -114,7 +116,7 @@ while True:
     elif action == "2":
         get_values()
     elif action == "3":
-        print("Which record would you like to get?")
+        print("Which patient ID would you like to look up data for?")
         id = input()
         get_value(id)
     elif action == "*":

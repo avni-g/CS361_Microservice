@@ -12,19 +12,20 @@
   </form>
 
   <h1>Get Vitals Data</h1>
-  <form action="/api/healthdata" method = "Get">
+  <form action ="/api/healthdata" method = "POST">
+   <label for="GetDataByID">Get Data by ID:</label>
+   <input type="Number" id="GetDataByID" name = "GetDataByID">
+   <input type="Submit" value="Submit">
+  </form>
+
+  <h1>Get Vitals Data</h1>
+  <form action="/api/healthdata" method = "GET">
    <label for="Get Data">Get Data:</label>
    <input type="Submit" value="Submit">
   </form>
 
 
-  <!--
-  <h1>Get Vitals Data</h1>
-   <form action ="/api/healthdata/1">
-    <label for="GetDataByID">Get Data by ID:</label>
-    <input type="Submit" value="Submit">
-   </form>
-   -->
+
 
 </body>
 </html>

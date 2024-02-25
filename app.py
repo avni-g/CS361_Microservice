@@ -97,8 +97,12 @@ with app.app_context():
 """
 
 # Get all vitals
-@app.route('/api/healthdata', methods=['GET'])
+@app.route('/api/healthdata', methods=['GET', 'POST'])
 def get_vitals():
+    if request.method == "POST":
+        id = request.form.get("GetDataByID")
+        vitals_record = HealthMetrics.query.get(id)
+        return healthmetric_schema.jsonify(vitals_record)
     all_vitals = HealthMetrics.query.all()
     result = healthmetrics_schema.dump(all_vitals)
     #print(result)
@@ -114,7 +118,6 @@ def get_vitals():
 def get_vitals_record(id):
     vitals_record = HealthMetrics.query.get(id)
     return healthmetric_schema.jsonify(vitals_record)
-
 
 
 """

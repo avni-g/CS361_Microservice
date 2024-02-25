@@ -29,7 +29,7 @@ If you are planning to set up the server locally, complete the following steps:
 ### Endpoints:
 - POST: /api/healthdata/post
 - GET: /api/healthdata
-- GET by ID: /api/healthdata/<id>
+- GET by ID: /api/healthdata/[id] (exclude brackets) 
  
 1) Run Python_Requests_Implementation/myreq.py. This will give you options to submit data through the terminal.
 - An example of a successful POST request is below.

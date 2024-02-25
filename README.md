@@ -61,7 +61,7 @@ TO GET data:
 
 To GET data by ID, update the URL: 
 
-![image](https://github.com/avni-g/CS361_Microservice/assets/61604206/d8611e09-8ba6-47b3-ae67-b45854b170f2)
+![image](https://github.com/avni-g/CS361_Microservice/assets/61604206/f6730218-4665-4c8b-9d0a-1c488d1d6049)
 
 ## Optional future development based on partner feedback 
 

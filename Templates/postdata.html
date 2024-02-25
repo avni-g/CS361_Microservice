@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Vitals Data</title>
+</head>
+<body>
+   <h1>Add Vitals Data</h1>
+   <form action="/vitals/datastore" method="post">
+    <label for="patient_id">Patient ID:</label>
+    <input type="text" id="patient_id" name="patient_id" required><br><br>
+    <label for="sys_bp">Sys BP:</label>
+    <input type="number" id="sys_bp" name="sys_bp" required><br><br>
+    <label for="dia_bp">Dia BP:</label>
+    <input type="number" id="dia_bp" name="dia_bp" required><br><br>
+    <label for="weight_lbs">Weight Lbs:</label>
+    <input type="number" id="weight_lbs" name="weight_lbs" required><br><br>
+    <label for="height_inches">Height Inches:</label>
+    <input type="number" id="height_inches" name="height_inches" required><br><br>
+    <input type="Submit" value="Submit">
+  </form>
+
+</body>
+</html>

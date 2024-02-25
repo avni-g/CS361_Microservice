@@ -7,6 +7,10 @@ import os
 
 ## Init app 
 
+##  curl -d '{\"sys_bp\":\"120\",\"dia_bp\":\"80\", \"weight_lbs\":\"150.0\", \"height_inches\":\"68\"}' -X POST http://localhost:5000/vitals/datastore -H"
+##  curl -X GET http://localhost:5000/vitals/datastore -H "
+##  curl -X GET http://localhost:5000/vitals/datastore/1 -H "
+
 app = Flask(__name__) 
 
 """
@@ -105,7 +109,7 @@ def get_vitals():
 
 
 # Get single Vitals record 
-@app.route('/vitals/get/<id>', methods=['GET'])
+@app.route('/vitals/datastore/<id>', methods=['GET'])
 def get_vitals_record(id):
     vitals_record = HealthMetrics.query.get(id)
     return healthmetric_schema.jsonify(vitals_record)

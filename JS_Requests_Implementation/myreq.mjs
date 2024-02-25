@@ -2,14 +2,12 @@ import fetch from 'node-fetch';
 import express from 'express';
 const router = express.Router();
 
-//  curl -d '{\"sys_bp\":\"120\",\"dia_bp\":\"80\", \"weight_lbs\":\"150.0\", \"height_inches\":\"68\"}' -X POST http://localhost:5000/vitals -H "Content-Type: application/json"
-
 
 let jsonData;
 
 async function fetchData() {
   try {
-    var url = "http://localhost:5000/vitals";
+    var url = "http://localhost:5000/vitals/datastore";
 
     // Make a GET request using fetch and return a Promise
     return fetch(url)
@@ -43,7 +41,7 @@ async function main_get() {
 
 async function postData() {
   try {
-    const url = "http://localhost:5000/vitals";
+    const url = "http://localhost:5000/vitals/datastore";
 
     const postData = {
       patient_id: 1, 

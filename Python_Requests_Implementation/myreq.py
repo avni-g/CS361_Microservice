@@ -58,7 +58,7 @@ def get_values():
     return 
 
 def get_value(ID):
-    URL = f"http://localhost:5000/vitals/get/{ID}"
+    URL = f"http://localhost:5000/vitals/datastore/{ID}"
 
     g_i = requests.get(url = URL)
     data = g_i.json()
@@ -102,8 +102,8 @@ def delete_value(ID):
 while True: 
     print("What would you like to do? Choose from the following:"
           "Select 1 to POST a value."
-          "Select 3 to GET all values."
-          "Select 4 to GET one value."
+          "Select 2 to GET all values."
+          "Select 3 to GET one value."
             )
     action = input()
     if action == "1":

@@ -4,6 +4,10 @@
 
 If you are planning to set up the server locally, complete the following steps:
 
+1) Run the pipfile to install dependencies. 
+ 
+`pip3 install pipenv`
+
 1) Run app.py, which starts the server and contains routing for the POST and GET requests.  
 
 `python app.py`

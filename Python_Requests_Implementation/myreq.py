@@ -66,6 +66,7 @@ def get_value(ID):
     time.sleep(5)
     return 
 
+"""
 def put_value(ID):
     URL = f"http://localhost:5000/vitals/{ID}"
     
@@ -97,30 +98,22 @@ def delete_value(ID):
     d = requests.delete(url = URL)
     return 
 
+"""
 while True: 
     print("What would you like to do? Choose from the following:"
           "Select 1 to POST a value."
-          "Select 2 to EDIT a value."
           "Select 3 to GET all values."
           "Select 4 to GET one value."
-          "Select 5 to DELETE one value.")
+            )
     action = input()
     if action == "1":
         post_values()
     elif action == "2":
-        print("Which record would you like to update?")
-        id = input()
-        put_value(id)
-    elif action == "3":
         get_values()
-    elif action == "4":
+    elif action == "3":
         print("Which record would you like to get?")
         id = input()
         get_value(id)
-    elif action == "5":
-        print("Which record would you like to delete?")
-        id = input()
-        delete_value(id)
 
 
 

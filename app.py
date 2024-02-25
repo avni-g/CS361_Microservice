@@ -110,7 +110,7 @@ def get_vitals_record(id):
     vitals_record = HealthMetrics.query.get(id)
     return healthmetric_schema.jsonify(vitals_record)
 
-
+"""
 # Update a Vitals record
 @app.route('/vitals/<id>', methods=['PUT'])
 def update_vitals(id):
@@ -140,7 +140,7 @@ def delete_vitals_record(id):
     db.session.commit()
     return healthmetric_schema.jsonify(vitals_record)
 
-
+"""
 
 ## Run Server 
 if __name__ == '__main__':

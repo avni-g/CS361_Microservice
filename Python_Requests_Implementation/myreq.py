@@ -53,8 +53,9 @@ def get_values():
 
     g = requests.get(url = URL)
     data = g.json()
-    print(data) 
-    time.sleep(5)
+    for item in data:
+        print(item, "\r\n")
+    time.sleep(2)
     return 
 
 def get_value(ID):
@@ -62,8 +63,9 @@ def get_value(ID):
 
     g_i = requests.get(url = URL)
     data = g_i.json()
-    print(data)
-    time.sleep(5)
+    for item, value in data.items():
+        print(item, ":", value, "\r\n")
+    time.sleep(2)
     return 
 
 """
@@ -101,9 +103,10 @@ def delete_value(ID):
 """
 while True: 
     print("What would you like to do? Choose from the following:"
-          "Select 1 to POST a value."
-          "Select 2 to GET all values."
-          "Select 3 to GET one value."
+          "Select 1 to POST a value.\r\n"
+          "Select 2 to GET all values.\r\n"
+          "Select 3 to GET one value.\r\n"
+          "Type * to exit.\r\n"
             )
     action = input()
     if action == "1":
@@ -114,6 +117,8 @@ while True:
         print("Which record would you like to get?")
         id = input()
         get_value(id)
+    elif action == "*":
+        break
 
 
 

@@ -96,7 +96,6 @@ with app.app_context():
     print(result)
 """
 
-
 # Get all vitals
 @app.route('/api/healthdata', methods=['GET'])
 def get_vitals():
@@ -110,10 +109,13 @@ def get_vitals():
 
 
 # Get single Vitals record 
+
 @app.route('/api/healthdata/<id>', methods=['GET'])
 def get_vitals_record(id):
     vitals_record = HealthMetrics.query.get(id)
     return healthmetric_schema.jsonify(vitals_record)
+
+
 
 """
 # Update a Vitals record

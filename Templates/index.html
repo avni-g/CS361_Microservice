@@ -18,23 +18,13 @@
   </form>
 
 
+  <!--
   <h1>Get Vitals Data</h1>
-   <form id = "GetDatabyIDForm" action="api/healthdata/" method="get">
+   <form action ="/api/healthdata/1">
     <label for="GetDataByID">Get Data by ID:</label>
-    <input type = number id = "GetDataByID" name = "GetDataByID">
     <input type="Submit" value="Submit">
- </form>
-
- <script>
-  document.getElementById("GetDatabyIDForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    var searchQuery = document.getElementByID("GetDataByID").value;
-    var newURL = "/api/healthdata/" + encodeURIComponent(searchQuery);
-  document.getElementbyID("GetDatabyIDForm").action = newURL;
-  this.submit();
-
-  })
- </script>
+   </form>
+   -->
 
 </body>
 </html>
